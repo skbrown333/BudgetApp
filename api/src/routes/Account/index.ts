@@ -7,9 +7,10 @@ import { logRoutes } from "../../utils/logging";
 
 const router = express.Router();
 
-router.post("", wrapAsync(AccountController.create));
+router.get("/", wrapAsync(AccountController.get));
 router.post("/create", wrapAsync(AccountController.create));
 router.post("/login", wrapAsync(AccountController.authorize));
+router.post("/token", wrapAsync(AccountController.getFromToken));
 
 logRoutes("/accounts", router);
 router.use(handleError);

@@ -14,6 +14,7 @@ export function handleError(error, req, res, next) {
 
 export function getCleanAccount(account) {
   return {
+    _id: account._id,
     first_name: account.first_name,
     last_name: account.last_name,
     email: account.email,

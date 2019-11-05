@@ -5,6 +5,7 @@ export default class BaseController {
       if (!options || !options.model) throw new Error("Must Pass Options");
       this.model = options.model;
       this.create = this.create.bind(this);
+      this.get = this.get.bind(this);
     }
   
     async create(req, res, next) {
@@ -15,6 +16,11 @@ export default class BaseController {
       } catch (err) {
         throw err;
       }
+    }
+
+    async get(req, res, next) {
+      let models = await this.model.find({});
+      return res.status(200).send(models);
     }
   }
   

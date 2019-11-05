@@ -30,6 +30,7 @@ app.listen(3000, () => {
 });
 
 app.use(headers);
+console.log('app: ', app);
 
 let morganLogStyle =
   ":method :url :status :response-time ms - :res[content-length]";

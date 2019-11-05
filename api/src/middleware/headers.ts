@@ -5,4 +5,4 @@ export default function setHeaders(req, res, next) {
       "Origin, X-Requested-With, Content-Type, Accept"
     );
     next();
-  }
+}
